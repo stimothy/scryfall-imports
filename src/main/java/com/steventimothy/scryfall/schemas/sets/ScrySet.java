@@ -98,10 +98,10 @@ public class ScrySet {
   private URI searchUri;
 
   /**
-   * A computer-readable classification for this set. See below.
+   * A computer-readable classification for this set.
    */
   @NonNull
-  private String setType;
+  private ScrySetType setType;
 
   /**
    * This set’s ID on TCGplayer’s API, also known as the groupId.
