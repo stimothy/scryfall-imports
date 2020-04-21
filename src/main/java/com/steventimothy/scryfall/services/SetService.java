@@ -4,6 +4,7 @@ import com.steventimothy.scryfall.clients.SetClient;
 import com.steventimothy.scryfall.schemas.sets.ScrySet;
 import com.steventimothy.scryfall.schemas.sets.ScrySetIcon;
 import com.steventimothy.scryfall.schemas.sets.ScrySetImportDetails;
+import com.steventimothy.scryfall.schemas.sets.ScrySetType;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -109,7 +110,7 @@ public class SetService {
                   .releasedAt(releasedAt)
                   .scryfallUri(scryfallUri)
                   .searchUri(searchUri)
-                  .setType((String) rawSet.get("set_type"))
+                  .setType(ScrySetType.getInstance((String)rawSet.get("set_type")))
                   .tcgPlayerId((Integer) rawSet.get("tcgplayer_id"))
                   .uri(uri);
           })
